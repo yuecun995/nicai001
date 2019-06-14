@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- namespace 命名空间 早期版本是可选的 现在是必须的 可以是随意的名称 但是最好是全限定名称 用对应接口的名称作为命名空间 -->
+<mapper namespace="com.bw.mapper.BookMapperDao">
+
+	<select id="getBookList" parameterType="map" resultType="map">
+		SELECT b.*,s.sname ,addr FROM 531_book b
+		LEFT JOIN 531_shop s on s.sid = b.bid
+	</select>
+	
+</mapper>
